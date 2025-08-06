@@ -15,7 +15,7 @@ services:
       http_path: /
     envs:
       - key: PAPERLESS_SECRET_KEY
-        value: Zaqwsx
+        value: Zaq12wsx
         type: SECRET
       - key: PAPERLESS_URL
         value: ${APP_URL}
@@ -31,7 +31,7 @@ services:
       - key: PAPERLESS_ADMIN_MAIL
         value: admin@example.com
       - key: PAPERLESS_REDIS
-        value: ${redis.REDIS_URL}
+        value: redis://redis:6379
       - key: PAPERLESS_DBHOST
         value: ${db.HOSTNAME}
       - key: PAPERLESS_DBPORT
@@ -44,13 +44,19 @@ services:
         value: ${db.PASSWORD}
       - key: PAPERLESS_DBSSLMODE
         value: require
+  - name: redis
+    image:
+      registry_type: DOCKER_HUB
+      registry: library
+      repository: redis
+      tag: "7-alpine"
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    internal_ports:
+    - 6379
+
 databases:
   - name: db
     engine: PG
     version: "15"
-    size: db-s-dev-database
-services:
-  - name: redis
-    engine: REDIS
-    version: "7"
     size: db-s-dev-database
