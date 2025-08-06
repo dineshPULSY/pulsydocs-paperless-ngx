@@ -18,16 +18,17 @@ RUN set -eux \
 
 ARG PNGX_TAG_VERSION=
 # Add the tag to the environment file if its a tagged dev build
-RUN set -eux && \
-case "${PNGX_TAG_VERSION}" in \
-  dev|beta|fix*|feature*) \
-    sed -i -E "s/tag: '([a-z\.]+)'/tag: '${PNGX_TAG_VERSION}'/g" /src/src-ui/src/environments/environment.prod.ts \
-    ;; \
-esac
+RUN set -eux \
+  && case "${PNGX_TAG_VERSION}" in \
+    dev|beta|fix*|feature*) \
+      sed -i -E "s/tag: '([a-z\.]+)'/tag: '${PNGX_TAG_VERSION}'/g" /src/src-ui/src/environments/environment.prod.ts \
+      ;; \
+  esac
+
+# Move ARG outside of RUN command
+ARG NG_BUILD_CONFIG=production
 
 RUN set -eux \
-  # Add this near the top of the frontend-builder stage
-  ARG NG_BUILD_CONFIG=production
   && ./node_modules/.bin/ng build --configuration ${NG_BUILD_CONFIG}
 
 # Stage: s6-overlay-base

@@ -5,13 +5,12 @@ services:
     restart: unless-stopped
     volumes:
       - redisdata:/data
-
   webserver:
     build:
-      context: ../../  # Points to the root directory where Dockerfile is
+      context: ../../ # Points to the root directory where Dockerfile is
       dockerfile: Dockerfile
       args:
-        - NG_BUILD_CONFIG=en-US  # Add this build argument
+        - NG_BUILD_CONFIG=en-US # Add this build argument
     restart: unless-stopped
     depends_on:
       - broker
@@ -25,8 +24,7 @@ services:
     env_file: docker-compose.env
     environment:
       PAPERLESS_REDIS: redis://broker:6379
-      PAPERLESS_DEBUG: "true"  # Enable debug mode
-
+      PAPERLESS_DEBUG: "true" # Enable debug mode
 volumes:
   data:
   media:
