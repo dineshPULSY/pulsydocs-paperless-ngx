@@ -18,6 +18,7 @@ export enum GlobalSearchType {
 }
 
 export const PAPERLESS_GREEN_HEX = '#17541f'
+export const PULSY_BLUE_HEX = '#1E3A8A'
 
 export const SETTINGS_KEYS = {
   VERSION: 'version',

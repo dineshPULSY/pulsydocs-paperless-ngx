@@ -26,7 +26,9 @@ case "${PNGX_TAG_VERSION}" in \
 esac
 
 RUN set -eux \
-  && ./node_modules/.bin/ng build --configuration production
+  # Add this near the top of the frontend-builder stage
+  ARG NG_BUILD_CONFIG=production
+  && ./node_modules/.bin/ng build --configuration ${NG_BUILD_CONFIG}
 
 # Stage: s6-overlay-base
 # Purpose: Installs s6-overlay and rootfs

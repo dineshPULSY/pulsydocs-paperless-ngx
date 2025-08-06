@@ -319,7 +319,7 @@
         <target state="final">לא יכול להוסיף את <x id="PH_1" equiv-text="status.message"/>:<x id="PH" equiv-text="status.filename"/></target>
       </trans-unit>
       <trans-unit id="1218124467712564468" datatype="html">
-        <source>Document <x id="PH" equiv-text="status.filename"/> is being processed by Paperless-ngx.</source>
+        <source>Document <x id="PH" equiv-text="status.filename"/> is being processed by PULSY Technology.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">134</context>
@@ -2859,7 +2859,7 @@
         <target state="translated">שגיאה במחיקת הקבוצה "<x id="PH" equiv-text="group.name"/>".</target>
       </trans-unit>
       <trans-unit id="7931334600001636863" datatype="html">
-        <source>by Paperless-ngx</source>
+        <source>by PULSY Technology</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/app-frame/app-frame.component.html</context>
           <context context-type="linenumber">20</context>
@@ -7079,7 +7079,7 @@
         <target state="translated">, </target>
       </trans-unit>
       <trans-unit id="7915903586014997661" datatype="html">
-        <source>Paperless-ngx is running!</source>
+        <source>PULSYDocs is running!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/widgets/welcome-widget/welcome-widget.component.html</context>
           <context context-type="linenumber">2</context>
@@ -7095,7 +7095,7 @@
         <target state="translated">אתה מוכן להעלות מסמכים! חקור את שלל התכונות של האפליקציה לבדך, או התחל סיור בעזרת הכפתור מטה.</target>
       </trans-unit>
       <trans-unit id="4474647174688421179" datatype="html">
-        <source>More detail on how to use and configure Paperless-ngx is always available in the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.paperless-ngx.com&quot; target=&quot;_blank&quot;&gt;"/>documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <source>More detail on how to use and configure PULSYDocs is always available in the <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.paperless-ngx.com&quot; target=&quot;_blank&quot;&gt;"/>documentation<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/widgets/welcome-widget/welcome-widget.component.html</context>
           <context context-type="linenumber">4</context>
@@ -7103,7 +7103,7 @@
         <target state="translated">מידע נוסף המסביר כיצד להשתמש או להגדיר את Paperless זמין כל הזמן ב <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;https://docs.paperless-ngx.com&quot; target=&quot;_blank&quot;&gt;"/> מסמכים <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
       </trans-unit>
       <trans-unit id="4294899532887357745" datatype="html">
-        <source>Thanks for being a part of the Paperless-ngx community!</source>
+        <source>Thanks for being a part of the PULSYDocs community!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/dashboard/widgets/welcome-widget/welcome-widget.component.html</context>
           <context context-type="linenumber">7</context>

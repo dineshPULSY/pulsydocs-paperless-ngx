@@ -1,12 +1,12 @@
 @use "sass:color";
-@mixin paperless-green {
-  // base color e.g. #17541f = hsl(128, 57%, 21%)
-  --pngx-primary: 128, 57%;
-  --pngx-primary-lightness: 21%;
+@mixin pulsy-blue {
+  // base color matching Pulsy logo blue: #1E3A8A = hsl(220, 65%, 33%)
+  --pngx-primary: 220, 65%;
+  --pngx-primary-lightness: 33%;
 }
 
 :root {
-  @include paperless-green;
+  @include pulsy-blue;
   --pngx-primary-text-contrast: var(--bs-light);
 
   --bs-primary: hsl(var(--pngx-primary), var(--pngx-primary-lightness));
@@ -19,6 +19,8 @@
   --pngx-primary-darken-18: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) - 18%));
   --pngx-primary-darken-27: hsl(var(--pngx-primary), calc(var(--pngx-primary-lightness) - 27%));
   --pngx-success-darken-10: hsl(152, 69%, 11%); // based on success #198754
+  // Add Pulsy orange accent color
+  --pngx-accent: hsl(14, 100%, 64%); // Pulsy orange #FF6B47
   --pngx-bg-alt: #fff;
   --pngx-bg-darker: var(--bs-gray-100);
   --pngx-bg-alt2: var(--bs-gray-200); // #e9ecef
@@ -67,8 +69,8 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
 }
 
 // Dark mode
-@mixin paperless-green-dark-mode {
-  --pngx-primary-lightness: 31%;
+@mixin pulsy-blue-dark-mode {
+  --pngx-primary-lightness: 43%;
   --bs-primary: hsl(var(--pngx-primary),var(--pngx-primary-lightness));
 }
 
@@ -315,11 +317,11 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
 
 [data-bs-theme="dark"] {
   body:not(.primary-light):not(.primary-dark) {
-    @include paperless-green-dark-mode;
+    @include pulsy-blue-dark-mode;
 
     .navbar.bg-primary {
-      // navbar is og green in dark mode
-      @include paperless-green;
+      // navbar is original blue in dark mode
+      @include pulsy-blue;
     }
   }
 
@@ -332,15 +334,15 @@ $form-check-radio-checked-bg-image-dark: url("data:image/svg+xml,<svg xmlns='htt
     body {
       // no custom theme color
       &:not(.primary-light):not(.primary-dark) {
-        @include paperless-green-dark-mode;
+        @include pulsy-blue-dark-mode;
 
         .navbar.bg-primary {
-          // navbar is og green in dark mode
-          @include paperless-green;
+          // navbar is original blue in dark mode
+          @include pulsy-blue;
         }
 
         .navbar.bg-primary .dropdown-menu {
-          @include paperless-green-dark-mode;
+          @include pulsy-blue-dark-mode;
         }
       }
 

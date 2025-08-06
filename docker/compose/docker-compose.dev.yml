@@ -1,0 +1,33 @@
+# Development docker compose file that builds from local source
+services:
+  broker:
+    image: docker.io/library/redis:8
+    restart: unless-stopped
+    volumes:
+      - redisdata:/data
+
+  webserver:
+    build:
+      context: ../../  # Points to the root directory where Dockerfile is
+      dockerfile: Dockerfile
+      args:
+        - NG_BUILD_CONFIG=en-US  # Add this build argument
+    restart: unless-stopped
+    depends_on:
+      - broker
+    ports:
+      - "8000:8000"
+    volumes:
+      - data:/usr/src/paperless/data
+      - media:/usr/src/paperless/media
+      - ./export:/usr/src/paperless/export
+      - ./consume:/usr/src/paperless/consume
+    env_file: docker-compose.env
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DEBUG: "true"  # Enable debug mode
+
+volumes:
+  data:
+  media:
+  redisdata:
